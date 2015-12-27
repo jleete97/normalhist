@@ -41,12 +41,12 @@ shinyServer(
         mainLabel <- reactive({
             diceWord <- ifelse(input$groupingSize == 1, "die", "dice")
             rollsWord <- ifelse(input$samples == 1, "roll", "rolls")
-            paste("Mean values for", input$samples, rollsWord, "of", input$groupingSize, diceWord, sep = " ")
+            paste("Distribution of mean die rolls for", input$samples, rollsWord, "of", input$groupingSize, diceWord, sep = " ")
         })
         
         output$hist <- renderPlot({
             if ((input$groupingSize <= 2) || (input$samples == 1)) {
-                # Special handling for one or two dice, or just a single rolls:
+                # Special handling for one or two dice, or just a single roll:
                 # keeps it from looking funny  by having spaces between what we know
                 # are just discrete values.
                 breaks <- seq(from = 0.5, to = input$maxValue + 0.5, by = 1)

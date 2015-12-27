@@ -10,7 +10,7 @@ shinyUI(pageWithSidebar(
     ),
     
     mainPanel(
-        p('The histogram below shows how the distribution of die rolls approaches normal as you add dice and roll more often.'),
+        p('The histogram below shows how the distribution of die roll means approaches normal as you add dice and roll more often.'),
 
         h3('Instructions:'),
         p('Select any of the following, and watch the plot change:'),
